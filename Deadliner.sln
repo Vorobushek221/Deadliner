@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deadliner", "Deadliner\Deadliner.csproj", "{BAF131B4-2366-48A6-B124-38BF1746C835}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAF131B4-2366-48A6-B124-38BF1746C835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF131B4-2366-48A6-B124-38BF1746C835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF131B4-2366-48A6-B124-38BF1746C835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF131B4-2366-48A6-B124-38BF1746C835}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BC748CC-AE4C-4D46-ACFD-2FE9B2B7A775}
+	EndGlobalSection
+EndGlobal
