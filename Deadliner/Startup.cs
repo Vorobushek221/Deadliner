@@ -6,28 +6,43 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using React.AspNet;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Routing;
 
 namespace Deadliner
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public IConfiguration Configuration { get; }
+
+        public IHostingEnvironment Environment { get; set; }
+
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
+        {
+            Configuration = configuration;
+            Environment = environment;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseFileServer(new FileServerOptions()
             {
-                app.UseDeveloperExceptionPage();
-            }
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")),
+                RequestPath = new PathString("/node_modules"),
+                EnableDirectoryBrowsing = true
+            });
+            app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Invalid route");
             });
         }
     }

@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "babel-standalone": "^6.26.0",
+    "jquery": "2.2.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
