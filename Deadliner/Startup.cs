@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Routing;
+using Deadliner.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Deadliner
 {
@@ -28,6 +30,7 @@ namespace Deadliner
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -39,6 +42,8 @@ namespace Deadliner
                 EnableDirectoryBrowsing = true
             });
             app.UseStaticFiles();
+
+            app.UseMvc();
 
             app.Run(async (context) =>
             {
